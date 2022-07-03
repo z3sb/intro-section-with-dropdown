@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+:root{
+  --text-color: hsl(0, 0%, 41%);
+  --hover-color:hsl(0, 0%, 8%);
+  --main-background-color:hsl(0, 0%, 98%);
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Epilogue', sans-serif;
+}
+main{
+  background-color: var(--main-background-color);
+  max-width: 100%;
+}
+main header{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  align-items: center;
+}
+main header nav{
+  display: flex;
+  flex-grow: 1;
+  color: var(--text-color);
+  justify-content: space-between;
+}
+main header nav ul{
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  max-width: 500px;
+  margin-left: 10px;
+  margin-top: 3px;
+  position: relative;
+}
+main header .register button{
+  background-color: transparent;
+  border:none;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+main header .register button:hover{
+  color: var(--hover-color);
+  border-color: var(--hover-color);
+}
+main header .register button:last-of-type{
+  border:1px solid var(--text-color);
+  border-radius: 15px;
+  margin-left: 10px;
+}
+main header nav ul li{
+  cursor: pointer;
+}
+main header nav ul li:hover{
+  color: var(--hover-color);
+}
+main header nav ul li img[alt="arrow-down"]{
+  margin-left: 3px;
+  margin-bottom: 1px;
+}
+ul .list {
+  background-color: white;
+  padding: 5px 20px;
+  box-shadow: 0 0 10px 0 var(--text-color);
+  border-radius: 10px;
+  margin-top: 20px;
+  position: absolute;
+  display: none;
+}
+nav ul li:first-of-type .list{
+  left: -30px;
+}
+ul .list div {
+  margin: 10px 0;
+  text-align: left;
+  transition-duration: 0.2s;
+}
+ul .list div img{
+  margin:auto 15px auto auto;
+}
+ul li.active .list{
+  display: block;
+  font-size: 15px;
+}
+nav ul li:hover .list{
+  color: var(--text-color);
+}
+nav ul li:hover .list div:hover{
+  padding: 0 3px;
+}
+
+main section{
+  padding: 30px;
+  display: flex;
+  width: 100%;
+}
+main section .text{
+  margin-top: 50px;
+  padding: 50px 100px;
+}
+main section .text h1{
+  font-size:83px;
+  font-weight: 700;
+}
+main section .text p{
+  color: var(--text-color);
+  margin: 40px 0;
+  width: 80%;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+main section .text button{
+  padding: 10px 25px;
+  background-color: transparent;
+  border:1px solid var(--hover-color);
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 15px;
+}
+main section .text .footer{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main section .image .desktop {
+  width: 70%;
+  margin-left: 80px;
+}
+
+main section .image .mobile{
+  display: none;
+}
+.attribution{
+  text-align: center;
+  color: var(--hover-color);
+}
+.attribution a{
+  text-decoration: none;
+  color: var(--text-color);
+}
+@media (max-width:767px) {
+  main section{
+    flex-direction: column-reverse;
+  }
+  main section .text{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+  main section .text h1{
+    font-size: 60px;
+    margin: 10px 0;
+  }
+  main section .text p{
+    letter-spacing: 0;
+    width: 100%;
+  }
+  main section .image .mobile{
+    display: block;
+    max-width: 100%;
+  }
+  main section .image .desktop {
+    display: none;
+  }
+  
+  main header nav{
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    background-color: white;
+    top:0;
+    right: 0;
+    flex-direction: column;
+    display: none;
+    overflow: hidden;
+    justify-content: normal;
+  }
+  ul .list {
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 10px 0;
+  }
+  .overloay{
+    background-color: rgb(0 0 0 / 50%);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  .overloay.active{
+    display: block;
+  }
+  main header nav.active{
+    display: flex;
+  }
+  main header nav ul{
+    flex-direction: column;
+    justify-content: normal;
+    width: 100%;
+    margin: 50px 20px 0;
+    max-height:500px;
+  }
+  main header nav ul li{
+    margin: 10px 0;
+  }
+  main header .register{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-height: fit-content;
+    height: 400px;
+  }
+  main header .register button{
+    width: 100%;
+    margin:5px 0;
+  }
+  main header .menu-icon{
+    background-image: url('./images/icon-menu.svg');
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 99;
+  }
+  main header .menu-icon.close{
+    background-image: url('./images/icon-close-menu.svg');
+  }
+  main section .text .footer{
+    margin-left: -40px;
+  }
+  main section .text button{
+    background-color: var(--hover-color);
+    color: white;
+  }
+  main section .text .footer img{
+    width: 70px;
+    margin: 0 10px;
+  }
+  section{
+    overflow: hidden;
+  }
+}
+@media (max-width:500px) {
+  main section .text h1{
+    font-size: 30px;
+  }
+}
